@@ -19,6 +19,6 @@ export default {
             },
         },
     },
-    presets: [require("./vendor/wireui/wireui/tailwind.config.js")],
+
     plugins: [forms],
 };
