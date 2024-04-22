@@ -12,16 +12,6 @@
 
                     </div>
                 </div>
-                <div class="flex items-end justify-between mt-4 space-x-1">
-                    <p class="text-xs">Recipient: <span class="font-semibold">
-                            {{-- {{ $note->recipient }} --}}
-                        </span></p>
-                    <div>
-
-                        <x-button.circle icon="eye"></x-button.circle>
-                        <x-button.circle icon="trash"></x-button.circle>
-                    </div>
-                </div>
             </x-card>
             @endforeach
         </div>

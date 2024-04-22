@@ -20,8 +20,8 @@ class ShowNotes extends Component
 
     public function render()
     {
-        $notes = Note::orderBy('id', 'desc')->get();
-        $users = User::orderBy('id', 'desc')->get();
+        $notes[] = Note::orderBy('id', 'desc')->get();
+        $users[] = User::orderBy('id', 'desc')->get();
 
         return view('livewire.notes.show-notes', compact('notes', 'users'));
     }
