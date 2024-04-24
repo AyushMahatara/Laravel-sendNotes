@@ -10,11 +10,6 @@ use Livewire\Component;
 class ShowNotes extends Component
 {
 
-    public function delete($noteId)
-    {
-        $note = Note::find($noteId);
-        $note->delete();
-    }
 
     public function render()
     {

@@ -10,19 +10,20 @@ use Livewire\Component;
 class ShowNotes extends Component
 {
 
-    public function delete($noteId)
+    public $notes;
+    public $user;
+    public function allnotes()
     {
-        $note = Note::find($noteId);
-        $note->delete();
+        $notes = Note::orderBy('id', 'desc')->get();
+        $users = User::orderBy('id', 'desc')->get();
     }
 
     public function render()
     {
-        $notes = Auth::user()
-            ->notes()->orderBy("created_at", "desc")->get();
+        $this->allnotes();
         // $notes = Note::orderBy('id', 'desc')->get();
         // $users = User::orderBy('id', 'desc')->get();
 
-        return view('livewire.notes.show-notes', compact('notes'));
+        return view('livewire.notes.show-notes', compact('notes', 'users'));
     }
 }

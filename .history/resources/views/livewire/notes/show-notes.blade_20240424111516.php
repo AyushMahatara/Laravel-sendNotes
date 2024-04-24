@@ -11,7 +11,7 @@
         @else
         <x-button icon-right="plus" class="mb-6" href="{{ route('notes.create') }}" wire:navigate>Create
             note</x-button>
-        <div class="grid grid-cols-3 gap-4 mt-12">
+        <div class="grid grid-cols-2 gap-4 mt-12">
             @foreach ($notes as $note)
             <x-card wire:key='{{ $note->id }}'>
                 <div class="flex justify-between">
@@ -33,7 +33,7 @@
                     <div>
 
                         <x-button.circle icon="eye"></x-button.circle>
-                        <x-button.circle icon="trash" wire:click="delete('{{ $note->id }}')"></x-button.circle>
+                        <x-button.circle icon="trash"></x-button.circle>
                     </div>
                 </div>
             </x-card>

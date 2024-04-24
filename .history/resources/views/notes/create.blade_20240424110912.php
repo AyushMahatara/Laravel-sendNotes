@@ -8,10 +8,10 @@
     <div class="py-12">
         <div class="max-w-2xl mx-auto sm:px-6 lg:px-8">
 
-            <x-button icon="arrow-left" class="mb-6" href="{{ route('notes.index') }}">All Notes</x-button>
+            <div class="p-6 text-red-400">
 
-            <livewire:notes.create-note>
-
+                <livewire:notes.create-note>
+            </div>
 
         </div>
     </div>
