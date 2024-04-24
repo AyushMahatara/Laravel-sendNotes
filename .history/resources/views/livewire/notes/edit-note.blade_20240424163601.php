@@ -7,7 +7,7 @@
         <x-input icon="calendar" wire:model='noteSendDate' type='date' label='Send Date' />
 
         <div class="pt-4">
-            <x-button type='submit' right-icon="calendar" spinner>Schedule Note</x-button>
+            <x-button wire:click='submit' right-icon="calendar" spinner>Schedule Note</x-button>
 
         </div>
 

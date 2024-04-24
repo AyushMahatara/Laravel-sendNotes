@@ -15,6 +15,7 @@ class EditNote extends Component
     public $noteIsPublished;
     public function mount(Note $note)
     {
+        dd($note);
         $this->authorize("update", $note);
         $this->note = $note;
         $this->noteTitle = $note->title;
@@ -26,7 +27,6 @@ class EditNote extends Component
 
     public function update(Note $note)
     {
-
 
         $validate = $this->validate([
             "noteTitle" => ["required", "string"],

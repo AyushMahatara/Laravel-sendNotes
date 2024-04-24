@@ -16,7 +16,7 @@ class EditNote extends Component
     public function mount(Note $note)
     {
         $this->authorize("update", $note);
-        $this->note = $note;
+        $this->fill($note);
         $this->noteTitle = $note->title;
         $this->noteBody = $note->body;
         $this->noteRecipient = $note->recipient;
@@ -26,7 +26,6 @@ class EditNote extends Component
 
     public function update(Note $note)
     {
-
 
         $validate = $this->validate([
             "noteTitle" => ["required", "string"],

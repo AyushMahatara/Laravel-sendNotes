@@ -7,7 +7,6 @@ use Livewire\Component;
 
 class EditNote extends Component
 {
-    public $note;
     public $noteTitle;
     public $noteBody;
     public $noteRecipient;
@@ -16,7 +15,7 @@ class EditNote extends Component
     public function mount(Note $note)
     {
         $this->authorize("update", $note);
-        $this->note = $note;
+        $this->fill($note);
         $this->noteTitle = $note->title;
         $this->noteBody = $note->body;
         $this->noteRecipient = $note->recipient;
@@ -26,8 +25,6 @@ class EditNote extends Component
 
     public function update(Note $note)
     {
-
-
         $validate = $this->validate([
             "noteTitle" => ["required", "string"],
             "noteBody" => ["required", "string"],
@@ -35,13 +32,7 @@ class EditNote extends Component
             "noteSendDate" => ["required", "date"],
         ]);
 
-        $this->note->update([
-            "title" => $this->noteTitle,
-            "body" => $this->noteBody,
-            "recipient" => $this->noteRecipient,
-            "send_date" => $this->noteSendDate,
-            "is_published" => $this->noteIsPublished
-        ]);
+        $note->update($validate);
     }
     public function render(Note $note)
     {

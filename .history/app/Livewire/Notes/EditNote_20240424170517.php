@@ -26,7 +26,7 @@ class EditNote extends Component
 
     public function update(Note $note)
     {
-
+        dd($this->noteIsPublished);
 
         $validate = $this->validate([
             "noteTitle" => ["required", "string"],
