@@ -4,11 +4,9 @@ namespace App\Livewire\Notes;
 
 use App\Models\Note;
 use Livewire\Component;
-use WireUi\Traits\Actions;
 
 class EditNote extends Component
 {
-    use Actions;
     public $note;
     public $noteTitle;
     public $noteBody;

@@ -4,11 +4,9 @@ namespace App\Livewire\Notes;
 
 use App\Models\Note;
 use Livewire\Component;
-use WireUi\Traits\Actions;
 
 class EditNote extends Component
 {
-    use Actions;
     public $note;
     public $noteTitle;
     public $noteBody;
@@ -45,10 +43,7 @@ class EditNote extends Component
             "is_published" => $this->noteIsPublished
         ]);
 
-        $this->dialog()->success(
-            $title = 'Profile saved',
-            $description = 'Your profile was successfully saved'
-        );
+        $this->dispatch('Edited');
     }
     public function render(Note $note)
     {

@@ -12,7 +12,6 @@
             <x-button href="{{ route('notes.index') }}" flat negative>Back to Note</x-button>
         </div>
 
-        <x-dialog z-index="z-50" blur="md" align="center" />
         <x-errors />
     </form>
 

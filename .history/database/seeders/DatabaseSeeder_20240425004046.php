@@ -22,6 +22,10 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password'),
         ]);
 
-        $this->call(NoteSeeder::class);
+        User::all()->each(function (User $user) {
+            Note::factory()->count(10)->create([
+                'user_id' => $user->id,
+            ]);
+        });
     }
 }
