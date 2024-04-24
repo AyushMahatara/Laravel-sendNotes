@@ -9,8 +9,6 @@
                 note</x-button>
         </div>
         @else
-        <x-button icon-right="plus" class="mt-6" href="{{ route('notes.create') }}" wire:navigate>Create
-            note</x-button>
         <div class="grid grid-cols-2 gap-4 mt-12">
             @foreach ($notes as $note)
             <x-card wire:key='{{ $note->id }}'>

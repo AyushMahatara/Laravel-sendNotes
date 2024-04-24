@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Livewire\Notes;
+
+use Livewire\Component;
+
+class CreateNote extends Component
+{
+
+    public $noteTitle;
+    public $noteBody;
+    public $noteRecipient;
+    public $noteSendDate;
+
+    public function submit()
+    {
+        $validate = $this->validate([
+            "noteTitle" => ["required", "string"],
+            "noteBody" => ["required", "string"],
+            "noteRecipient" => ["required", "email"],
+            "noteSendDate" => ["required", "date"],
+        ]);
+
+        auth()->user()->createNote($this->noteTitle, $this->noteBody, $this->noteRecipient,
+    }
+
+    public function render()
+    {
+        return view('livewire.notes.create-note');
+    }
+}
