@@ -13,7 +13,7 @@ class ShowNotes extends Component
     public function delete($noteId)
     {
         $note = Note::find($noteId);
-        $this->authorize("delete", $note);
+
         $note->delete();
     }
 
