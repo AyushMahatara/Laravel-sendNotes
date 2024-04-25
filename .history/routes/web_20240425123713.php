@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Models\Note;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,12 +21,9 @@ Route::view('notes', 'notes.index')->middleware(['auth'])->name('notes.index');
 Route::view('notes/create', 'notes.create')->middleware(['auth'])->name('notes.create');
 Route::view('notes/{note}/edit', 'notes.edit')->middleware(['auth'])->name('notes.edit');
 
-Route::get('note/{note}', function (Note $note) {
-    if (!$note->is_published) {
-        abort(404);
-    }
-    $user = $note->user;
-    return view('notes.view', ['note' => $note, 'user' => $user]);
-})->name('note.view');
+Route::get('note/{note}', function(Note $note)
+{
+    if ($note->user_id == auth()->id()) {
+})
 
 require __DIR__ . '/auth.php';

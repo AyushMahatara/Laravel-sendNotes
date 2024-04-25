@@ -22,8 +22,7 @@
                         <p class="mt-2 text-xs">{{ Str::limit($note->body, 50, '...') }}</p>
                     </div>
                     <div class="text-xs text-gray-500">
-                        {{ $note->send_date }}
-                        {{-- {{ \Carbon\Carbon::parse($note->send_date)->format('Y-m-d') }} --}}
+                        {{ \Carbon\Carbon::parse($note->send_date)->format('M-d-Y') }}
                         {{-- {{$user->email }} --}}
 
                     </div>
@@ -34,7 +33,7 @@
                         </span></p>
                     <div>
 
-                        <x-button.circle icon="eye" href="{{ route('note.view', $note) }}"></x-button.circle>
+                        <x-button.circle icon="eye"></x-button.circle>
                         <x-button.circle icon="trash" wire:click="delete('{{ $note->id }}')"></x-button.circle>
                     </div>
                 </div>

@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Models\Note;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {

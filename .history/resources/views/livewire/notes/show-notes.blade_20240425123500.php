@@ -34,7 +34,7 @@
                         </span></p>
                     <div>
 
-                        <x-button.circle icon="eye" href="{{ route('note.view', $note) }}"></x-button.circle>
+                        <x-button.circle icon="eye"></x-button.circle>
                         <x-button.circle icon="trash" wire:click="delete('{{ $note->id }}')"></x-button.circle>
                     </div>
                 </div>
